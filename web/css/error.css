@@ -1,0 +1,43 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : May 16, 2021, 8:56:29 AM
+    Author     : Pham Thi Huyen
+*/
+body{
+    background-color: #E7E7E7;
+}
+
+.container{
+    width: 886px;
+    height: 600px;
+    margin: 0 auto;
+    font-family: arial;
+}
+
+.main{
+    background: url(../images/bg.jpg);
+    width: 886px;
+    height: 600px;
+    display: flex;
+}
+
+.content{
+    font-size: 20px;
+    font-weight: bold;
+    padding-left: 90px;
+    padding-top: 20px;
+}
+
+.left{
+    width: 70%;
+    height: 400px;
+    padding-left: 90px;
+    padding-top: 20px;
+    padding-right: 20px;
+    border-right: 2px dashed #e0e0e0;
+}
+
