@@ -80,10 +80,10 @@ public class HomeController extends HttpServlet {
             request.setAttribute("timePost", timePostFormat);
 
             //go to home page
-            request.getRequestDispatcher("Home.jsp").forward(request, response);
+            request.getRequestDispatcher("view/Home.jsp").forward(request, response);
         } catch (Exception ex) {
             request.setAttribute("error", ex);
-            request.getRequestDispatcher("Error.jsp").forward(request, response);
+            request.getRequestDispatcher("view/Error.jsp").forward(request, response);
         }
     }
 

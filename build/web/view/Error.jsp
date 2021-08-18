@@ -16,7 +16,7 @@
     </head>
     <body>
         <div class="container">
-            <jsp:include page="common/Header.jsp"/>
+            <jsp:include page="../common/Header.jsp"/>
             <div class="main">
                 <div class="left">
                     <div class="content">
@@ -24,9 +24,9 @@
                     </div>
                 </div>
 
-                <jsp:include page="common/Right.jsp"/>
+                <jsp:include page="../common/Right.jsp"/>
             </div>
-            <jsp:include page="common/Footer.jsp"/>
+            <jsp:include page="../common/Footer.jsp"/>
         </div>
     </body>
 </html>

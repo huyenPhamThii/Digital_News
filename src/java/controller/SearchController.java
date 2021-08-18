@@ -127,34 +127,34 @@ public class SearchController extends HttpServlet {
                 int pageNumber = articleDAO.getCountPage(keyword, PAGE_SIZE);
                 request.setAttribute("pageNumber", pageNumber);
 
+                //right side
+                int LIST_SIZE = 6;
+                ArrayList<Article> listTop6 = articleDAO.getTopList(LIST_SIZE);
+                request.setAttribute("top5MostRecent", listTop6);
+
+                Article mostRecentArticle = listTop6.get(0);
+                request.setAttribute("mostRecentArticle", mostRecentArticle);
+
                 ArrayList<Article> listSearch = articleDAO.getListSearch(keyword, PAGE_SIZE, pageIndex);
                 //in case not found
                 if (listSearch.isEmpty()) {
                     request.setAttribute("keyword", keyword);
                     request.setAttribute("error", "Not Found!!!!");
-                    request.getRequestDispatcher("Error.jsp").forward(request, response);
+                    request.getRequestDispatcher("view/Error.jsp").forward(request, response);
                 } else {
                     request.setAttribute("listSearch", listSearch);
 
                     request.setAttribute("keyword", keyword);
                     request.setAttribute("pageIndex", pageIndex);
 
-                    //right side
-                    int LIST_SIZE = 6;
-                    ArrayList<Article> listTop6 = articleDAO.getTopList(LIST_SIZE);
-                    request.setAttribute("top5MostRecent", listTop6);
-
-                    Article mostRecentArticle = listTop6.get(0);
-                    request.setAttribute("mostRecentArticle", mostRecentArticle);
-
                     //go to search page
-                    request.getRequestDispatcher("Search.jsp").forward(request, response);
+                    request.getRequestDispatcher("view/Search.jsp").forward(request, response);
                 }
             } catch (Exception ex) {
                 request.setAttribute("error", ex);
-                request.getRequestDispatcher("Error.jsp").forward(request, response);
+                request.getRequestDispatcher("view/Error.jsp").forward(request, response);
             }
-        } 
+        }
     }
 
     /**
